@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --omit=dev && \
+RUN npm ci --omit=dev && \
     chown -R node:node /app
 
 COPY --chown=node:node server.js ./
